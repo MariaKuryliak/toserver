@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		1
+		const array = ['a', 'b', 'c'];
+		const reversArray = array.map((item, idx, arr) =>{
+			const i = arr.length - (idx + 1);
+			return arr[i];
+		});
+		console.log(reversArray);
+		2
+		const dict = { prop1 : 'value1', prop2 : 'value2' };
+		for (const key in dict) {
+			console.log(key);
+		    const val = dict[key];
+		    console.log(val);
+		    dict[val] = key;
+		    delete dict[key];
+		}
+		console.log(dict);
+		3
+		   function curry(fn) {
+		      const argsLeng = fn.length;
+		      return function f1(...args) {
+		        if (args.length >= argsLeng) {
+		          console.log('Аргументів достатньо');
+		          return fn(...args);
+		        } else {
+		          console.log('Аргументів не достатньо');
+		          return function f2(...moreArgs) {
+		            console.log('f2', moreArgs);
+		            const newArgs = args.concat(moreArgs);
+		            return f1(...newArgs);
+		          };
+		        }
+		      };
+
+		    }
+
+
+		    function sum(a, b, c) {
+		      return a + b + c;
+		    }
+
+		    const curriedSum = curry(sum);
+		    console.log(curriedSum(1)(2)(3));
+
+		   4 oop
+		   class BookList {
+		   		constructor() {
+				    this.books_as_read = true;
+				    this.books_as_not_read = true;
+				    this.books_next_to_read = true;
+				    this.books_being_read = true;
+				    this.book_last_read = true;
+				    this.array_all_Books = true;
+				 }
+				 add(book){
+				 	arr = [];
+				 	arr.push(book);
+				 }
+				 finishCurrentBook(){
+				 	this.books_being_read = 'read';
+				 }
+		   		
+		   }
+		   class Book {
+		   		constructor(){
+		   			this.Title = Title; 
+		   			this.Genre = Genre;
+		   			this.Author = Author;
+		   			this.Read = Read;
+		   			this.Read_Date = Read_Date;
+		   		}
+
+
+		   }
+
+		   BookList.prototype.add;
+		   BookList.prototype.finishCurrentBook;
+		   const read_date = new Date(Date.now());
+		   console.log(read_date);
+		   console.log(BookList.prototype.finishCurrentBook);
+           console.log(Book.prototype.add);
+           	
+	</script>
+	
+</body>
+</html>
+
+
